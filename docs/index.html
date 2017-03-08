@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AXYS KYOUDAN NYUU SHINSHO</title>
+    <meta name="viewport"
+          content="width=1200, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="container welcome-screen">
+    <form class="input-form">
+        <fieldset class="input-row">
+            <label class="full">
+                <input type="text" name="name"/>
+            </label>
+        </fieldset>
+
+        <fieldset class="input-row two-input">
+            <label class="half gender">
+                <input type="text" name="gender"/>
+            </label>
+            <label class="half age">
+                <input type="number" name="age"/>
+            </label>
+        </fieldset>
+
+        <fieldset class="input-row">
+            <label class="full">
+                <input type="text" name="address"/>
+            </label>
+        </fieldset>
+
+        <fieldset class="input-row">
+            <label class="full">
+                <input type="text" name="career"/>
+            </label>
+        </fieldset>
+
+        <fieldset class="input-row">
+            <label class="full">
+                <input type="text" name="opportunity"/>
+            </label>
+        </fieldset>
+    </form>
+
+    <div class="sign-area">
+        <canvas width="603" height="300" id="sign-board"></canvas>
+    </div>
+
+    <script type="text/javascript">
+        (function () {
+            Object.defineProperty(Element.prototype, 'documentOffsetTop', {
+                get: function () {
+                    return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop : 0 );
+                }
+            });
+
+            Object.defineProperty(Element.prototype, 'documentOffsetLeft', {
+                get: function () {
+                    return this.offsetLeft + ( this.offsetParent ? this.offsetParent.documentOffsetLeft : 0 );
+                }
+            });
+
+            function getLayoutPos(e) {
+                var x, y;
+                if (e.layerX) {
+                    x = e.layerX;
+                    y = e.layerY;
+                } else if (e.clientX) {
+                    x = e.clientX - e.target.documentOffsetLeft;
+                    y = e.clientY - e.target.documentOffsetTop;
+                }else if (e.touches){
+                    if(e.touches.length!=1){
+                        x=-100;
+                        y=-100;
+                    }else{
+                        x=e.touches[0].pageX- e.target.documentOffsetLeft;
+                        y=e.touches[0].pageY- e.target.documentOffsetTop;
+                    }
+                }
+
+                return {x: x, y: y};
+            }
+
+            var signBoard = document.getElementById("sign-board");
+            var context = signBoard.getContext('2d');
+            var drawing = false, lastPos = {x: 0, y: 0};
+            var onDown = function (e) {
+                drawing = true;
+                lastPos = getLayoutPos(e);
+            };
+            var onUp = function () {
+                drawing = false;
+            };
+
+            var onMove = function (e) {
+                if (!drawing) return;
+                var nowPoint = getLayoutPos(e);
+                context.beginPath();
+                context.moveTo(lastPos.x, lastPos.y);
+                context.lineTo(nowPoint.x, nowPoint.y);
+                context.stroke();
+                context.closePath();
+
+                lastPos = nowPoint;
+
+                e.preventDefault();
+            };
+
+            context.strokeStyle = "#492e00";
+            context.lineCap = "round";
+            context.lineWidth = 5;
+
+
+            signBoard.addEventListener('mousedown', onDown);
+            signBoard.addEventListener('touchstart', onDown);
+
+            signBoard.addEventListener('mouseup', onUp);
+            signBoard.addEventListener('touchend', onUp);
+
+            signBoard.addEventListener('mousemove', onMove);
+            signBoard.addEventListener('touchmove', onMove);
+        })();
+    </script>
+</main>
+</body>
+</html>
