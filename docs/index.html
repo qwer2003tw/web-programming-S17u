@@ -4,49 +4,53 @@
     <meta charset="UTF-8">
     <title>AXYS KYOUDAN NYUU SHINSHO</title>
     <meta name="viewport"
-          content="width=1200, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <main class="container welcome-screen">
-    <form class="input-form">
+    <form class="input-form" title="姓名">
         <fieldset class="input-row">
             <label class="full">
-                <input type="text" name="name"/>
+                <input type="text" name="name" placeholder="Your name"/>
             </label>
         </fieldset>
 
-        <fieldset class="input-row two-input">
+        <fieldset class="input-row two-input" title="性別/年齡">
             <label class="half gender">
-                <input type="text" name="gender"/>
+                <input type="text" name="gender" placeholder="Boy/Girl"/>
             </label>
             <label class="half age">
-                <input type="number" name="age"/>
+                <input type="number" name="age" placeholder="Age"/>
             </label>
         </fieldset>
 
-        <fieldset class="input-row">
+        <fieldset class="input-row" title="地址">
             <label class="full">
-                <input type="text" name="address"/>
+                <input type="text" name="address" placeholder="Your home address"/>
             </label>
         </fieldset>
 
-        <fieldset class="input-row">
+        <fieldset class="input-row" title="職業">
             <label class="full">
-                <input type="text" name="career"/>
+                <input type="text" name="career" placeholder="About your career"/>
             </label>
         </fieldset>
 
-        <fieldset class="input-row">
+        <fieldset class="input-row" title="入教契機">
             <label class="full">
-                <input type="text" name="opportunity"/>
+                <input type="text" name="opportunity" placeholder="Why u want to join us?"/>
             </label>
+        </fieldset>
+
+        <fieldset hidden>
+            <button type="submit">Submit</button>
         </fieldset>
     </form>
 
     <div class="sign-area">
-        <canvas width="603" height="300" id="sign-board"></canvas>
+        <canvas width="603" height="300" id="sign-board" title="屬名:本人將誠心誠意信仰阿庫西斯教"></canvas>
     </div>
 
     <script type="text/javascript">
