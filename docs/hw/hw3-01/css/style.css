@@ -43,7 +43,7 @@ header {
 }
 
 #title {
-    font: 44px/52px "Arial Black";
+    font: 44px/1 "Arial Black";
     color: #778A50;
     margin: 0;
     vertical-align: top;
@@ -52,6 +52,7 @@ header {
 header .icons-bar, header .member-function {
     display: inline-block;
     margin-top: 19px;
+    float:left;
 }
 
 header .member-function {
@@ -76,7 +77,7 @@ header .member-function {
     background: #EDF2C5;
     border-radius: 3px;
     color: #778A50;
-    font: 12px "Arial Black";
+    font:bold 14px  Arial;
     padding: 3px 8px;
     margin-left: 10px;
 }
@@ -193,7 +194,7 @@ main {
 }
 
 #contact-article .content p {
-    letter-spacing: -0.125px;
+    letter-spacing: -0.1px;
 }
 
 #contact-article .content p:nth-of-type(2) {
