@@ -3,7 +3,7 @@
 /*Clear default margin of body*/
 body {
     margin: 0;
-    background: #ecf4c5;
+    background: #EDF2C5;
     font: 16px Arial;
 }
 
@@ -37,31 +37,25 @@ h1, h2 {
 
 /**Header**/
 header {
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin-top: 53px;
+    margin-bottom: 17px;
+    box-sizing: border-box;
 }
 
 #title {
-    font-size: 43px;
-    color: #899c5c;
+    font: 44px/52px "Arial Black";
+    color: #778A50;
     margin: 0;
-}
-
-header .right {
-    margin-bottom: 7px;
+    vertical-align: top;
 }
 
 header .icons-bar, header .member-function {
     display: inline-block;
-}
-
-header .icons-bar {
-    margin-top: 10px;
+    margin-top: 19px;
 }
 
 header .member-function {
-    margin: 5px 0 0 10px;
-    padding-left: 10px;
+    margin-left: 10px;
     border-left: 1px solid #778A50;
 }
 
@@ -83,22 +77,24 @@ header .member-function {
     border-radius: 3px;
     color: #778A50;
     font: 12px "Arial Black";
+    padding: 3px 8px;
+    margin-left: 10px;
 }
 
 /**!Header**/
 
 .box {
-    background: #899c5b;
+    background: #778A50;
     border-radius: 3px;
     color: #ecf4c5;
     font: 16px "Arial Black";
-    padding: 0 1px;
+    padding: 0;
 }
 
 /**Nav**/
 .top-nav ul {
     margin: 0;
-    padding: 0 1px;
+    padding: 0;
     list-style: none;
 }
 
@@ -106,15 +102,15 @@ header .member-function {
     margin: 0;
     list-style: none;
     display: inline-block;
-    font: 16px "Arial Black";
 }
 
 .top-nav li a {
     list-style: none;
     display: block;
-    line-height: 43px;
     text-decoration: none;
-    padding: 0 30px;
+    padding: 16px 30px;
+    font-size: 16px;
+    line-height: 1;
     color: inherit;
 }
 
@@ -124,14 +120,18 @@ main {
     margin-top: 20px;
 }
 
+#main-cover{
+    line-height: 0;
+}
+
 #main-cover img {
-    width: 940px;
+    width: 100%;
     border-radius: 3px;
 }
 
 /*article*/
 .articles-container {
-    margin-top: 32px;
+    margin-top: 30px;
 }
 
 .articles-container > article {
@@ -145,10 +145,10 @@ main {
 }
 
 .content-box h2 {
-    margin-bottom: 17px;
-    padding-left: 31px;
-    padding-right: 31px;
-    line-height: 44px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 15px;
+    line-height: 45px;
 }
 
 /*article1*/
@@ -173,9 +173,10 @@ main {
 /*article2*/
 #contact-article .content {
     background: #f5f8d9;
-    padding: 14px 15px;
-    color: #898989;
+    padding: 15px;
+    color: #7D7D7D;
     font-size: 12px;
+    line-height: 1.33;
 }
 
 #contact-article .content > :first-child {
@@ -195,6 +196,14 @@ main {
     letter-spacing: -0.125px;
 }
 
+#contact-article .content p:nth-of-type(2) {
+    margin-bottom: 4px;
+}
+
+#contact-article .content p:nth-of-type(3) {
+    margin-top: 4px;
+}
+
 #contact-article .h-line {
     height: 1px;
     background: #898989;
@@ -204,11 +213,11 @@ main {
 /*!article2*/
 /*!article*/
 footer {
-    margin-top: 34px;
-    background: #889C5B;
+    margin-top: 35px;
+    background: #778A50;
     color: #EDF2C5;
     text-align: center;
-    padding: 24px;
+    padding: 24px 0 25px;
     font-size: 12px;
 }
 
